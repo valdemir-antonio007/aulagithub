@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a th:href="@{/pessoas/novo}" >Novo</a>
+    <div class="lista">
+        <table class="table-bordered table-hover">
+            
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Nome</td>
+                    <td>Email</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="pessoa : ${pessoas}">
+                    <td th:text="${pessoa.id}"></td>
+                    <td th:text="${pessoa.nome}"></td>
+                    <td th:th:text="${pessoa.email}"></td>
+                    <td> 
+                        <a th:href="@{/pessoas/edita/{id} (id=${pessoa.pessoaid}) }">Editar</a>    
+                    </td>
+                    <td>
+                        <a th:href="@{/pessoas/remove/{id} (id=${pessoa.pessoaid}) }">Remover</a>
+                    </td>
+                </tr>
+            </tbody>
+                
+            
+        </table>
+    </div>
+
+</body>
+</html>
